@@ -1,5 +1,5 @@
 <x-app-layout>
-  <section id="jumbotron" class="bg-cover bg-gradient-to-b from-gray-100 to-indigo-300">
+  <section id="jumbotron">
     <div class="container mx-auto px-4">
       <div class="flex h-full min-h-screen w-full items-center justify-center">
         <div class="flex flex-wrap-reverse items-center lg:px-10">

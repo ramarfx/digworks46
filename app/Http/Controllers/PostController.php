@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -13,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        $posts = Post::all();
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -21,15 +22,31 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title'       => 'required',
+            'description' => 'required',
+            'category'    => 'required',
+            'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'link'        => 'url',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $file = $request->image;
+            $path = $file->store('public/posts');
+            $validated['image'] = $path;
+        }
+
+        $request->user()->posts()->create($validated);
+
+        return redirect()->route('post.index');
     }
 
     /**
