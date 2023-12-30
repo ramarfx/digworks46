@@ -55,7 +55,7 @@
         </div>
       </form>
 
-      <div class="mt-5 grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-5 lg:grid-cols-5">
+      <div class="py-5  grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-5 lg:grid-cols-5">
         @forelse ($posts as $post)
           <div class="flex flex-col">
             <div class="relative w-full bg-primary">
@@ -66,7 +66,7 @@
               </div>
 
             </div>
-            <div class="rounded border px-4 pt-4">
+            <div class="rounded bg-white border px-4 pt-4">
               <a href="" class="block truncate text-base font-semibold">
                 {{ $post->title }}
               </a>
@@ -76,7 +76,7 @@
               <div class="flex items-center justify-between border-t py-3">
                 <div class="flex items-center gap-2">
                   <div class="h-5 w-5 rounded-full bg-primary"></div>
-                  <p class="text-secondary text-sm">nasi</p>
+                  <p class="text-secondary text-sm">{{ $post->user->name }}</p>
                 </div>
                 <div class="flex gap-5">
                   <form action="" method="post">
