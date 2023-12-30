@@ -15,11 +15,6 @@
             </x-nav-link>
           </li>
           <li>
-            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-              {{ __('Dashboard') }}
-            </x-nav-link>
-          </li>
-          <li>
             <x-nav-link :href="route('posts')" :active="request()->routeIs('posts')">
               {{ __('Posts') }}
             </x-nav-link>
@@ -80,12 +75,13 @@
       @else
         <ul class="flex gap-2 md:gap-5">
           <li class="group">
-            <a href="{{ route('login') }}" class="flex rounded-md bg-primary px-3 md:px-6 py-2 text-sm md:text-base text-white">Login</a>
+            <a href="{{ route('login') }}"
+              class="flex rounded-md bg-primary px-3 py-2 text-sm text-white md:px-6 md:text-base">Login</a>
           </li>
           <li class="group hidden md:block">
             <a href="{{ route('register') }}">
               <button
-                class="rounded-md border border-primary bg-transparent px-6 py-2 text-sm md:text-base text-primary">Register</a>
+                class="rounded-md border border-primary bg-transparent px-6 py-2 text-sm text-primary md:text-base">Register</a>
           </li>
         </ul>
       @endauth
