@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('image');
             $table->string('link')->nullable();
             $table->enum('category', ['desain', 'website', 'aplikasi']);

@@ -67,7 +67,7 @@
 
             </div>
             <div class="rounded bg-white border px-4 pt-4">
-              <a href="" class="block truncate text-base font-semibold">
+              <a href="{{ route('post.show', $post) }}" class="block truncate text-base font-semibold">
                 {{ $post->title }}
               </a>
               <p class="text-xs font-semibold leading-8 text-primary">
@@ -91,7 +91,9 @@
             </div>
           </div>
         @empty
-
+          <div class="col-span-2 md:col-span-3 lg:col-span-5 bg-gray-300 py-10 bg-opacity-50">
+            <p class="text-center text-base md:text-lg lg:text-xl font-bold text-gray-500">No posts</p>
+          </div>
         @endforelse
       </div>
     </div>

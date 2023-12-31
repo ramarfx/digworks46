@@ -1,3 +1,5 @@
+import { Collapse } from 'flowbite';
+
 // set the target element that will be collapsed or expanded (eg. navbar menu)
 const $targetEl = document.getElementById('targetEl');
 
@@ -8,6 +10,7 @@ const $triggerEl = document.getElementById('triggerEl');
 const options = {
     onCollapse: () => {
         console.log('element has been collapsed');
+        $targetEl.classList.add('hidden');
     },
     onExpand: () => {
         console.log('expand');
@@ -22,7 +25,6 @@ const instanceOptions = {
     override: true
 };
 
-import { Collapse } from 'flowbite';
 
 /*
  * $targetEl: required
@@ -30,5 +32,3 @@ import { Collapse } from 'flowbite';
  * options: optional
  */
 const collapse = new Collapse($targetEl, $triggerEl, options, instanceOptions);
-
-collapse.toggle();

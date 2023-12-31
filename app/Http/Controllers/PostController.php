@@ -5,13 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class PostController extends Controller
 {
+    private $validationRules = [
+        'title'       => 'required',
+        'description' => 'nullable',
+        'category'    => 'required',
+        'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'link'        => 'url|nullable',
+    ];
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() : View
     {
         $posts = Post::all();
         return view('post.index', compact('posts'));
@@ -20,7 +28,7 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create() : View
     {
         return view('post.create');
     }
@@ -30,13 +38,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title'       => 'required',
-            'description' => 'required',
-            'category'    => 'required',
-            'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'link'        => 'url',
-        ]);
+        $validated = $request->validate($this->validationRules);
 
         if ($request->hasFile('image')) {
             $file = $request->image;
@@ -52,17 +54,17 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Post $post) : view
     {
-        //
+        return view('post.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Post $post) : View
     {
-        //
+        return view('post.edit', compact('post'));
     }
 
     /**

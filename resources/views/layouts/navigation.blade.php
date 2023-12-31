@@ -102,6 +102,11 @@
             {{ __('Dashboard') }}
           </x-nav-link>
         </li>
+        <li>
+          <x-nav-link :href="route('post.index')" :active="request()->routeIs('post.index')">
+            {{ __('Posts') }}
+          </x-nav-link>
+        </li>
       </ul>
     </div>
   </div>

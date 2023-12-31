@@ -18,12 +18,15 @@ if (inputFile) {
         if (file) {
             const reader = new FileReader();
 
+            previewImage.classList.remove('hidden');
+
             reader.addEventListener('load', function () {
                 previewImage.src = reader.result;
             });
 
             reader.readAsDataURL(file);
         } else {
+            previewImage.classList.add('hidden');
             previewImage.src = ''; // Jika tidak ada file yang dipilih, gambar preview dikosongkan
         }
     });

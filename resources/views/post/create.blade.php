@@ -13,6 +13,9 @@
               <input type="text" id="title" name="title"
                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 lg:w-72"
                 placeholder="Title" required>
+              @error('title')
+                <p class="mt-0.5 text-sm text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-6">
               <label for="category" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
@@ -24,6 +27,9 @@
                 <option value="website">Website</option>
                 <option value="aplikasi">Aplikasi</option>
               </select>
+              @error('category')
+                <p class="mt-0.5 text-sm text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-6">
               <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
@@ -31,6 +37,9 @@
               <input
                 class="mb-5 block w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400 lg:w-80"
                 id="inputFile" name="image" accept="image/*" type="file">
+              @error('image')
+                <p class="mt-0.5 text-sm text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-4">
               <label for="linkCheckbox" class="ms-2 block text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -43,11 +52,14 @@
               <input type="url" id="link" name="link"
                 class="hidden w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 lg:w-72"
                 placeholder="Link">
+              @error('link')
+                <p class="mt-0.5 text-sm text-red-500">{{ $message }}</p>
+              @enderror
             </div>
           </div>
           <div class="lg:w-1/2">
             <img id="preview"
-              class="mb-5 h-[350px] w-auto max-w-full rounded-lg border-4 border-gray-300 bg-gray-200 object-contain"
+              class="mb-5 hidden h-[350px] w-auto max-w-full rounded-lg border-4 border-gray-300 bg-gray-200 object-contain"
               src="{{ asset('image/mading.png') }}">
           </div>
         </div>
@@ -58,7 +70,7 @@
               <div
                 class="flex flex-wrap items-center divide-gray-200 dark:divide-gray-600 sm:divide-x sm:rtl:divide-x-reverse">
                 <div class="flex items-center space-x-1 rtl:space-x-reverse sm:pe-4">
-                  <p>Description</p>
+                  <p>Deskripsi <span class="text-xs text-gray-500">opsional</span></p>
                 </div>
               </div>
             </div>
@@ -66,9 +78,12 @@
               <label for="editor" class="sr-only">Publish post</label>
               <textarea id="editor" rows="8" name="description"
                 class="block w-full border-0 bg-white px-0 text-sm text-gray-800 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
-                placeholder="Write an article..." required></textarea>
+                placeholder="Tuliskan sebuah keterangan pada karya mu..."></textarea>
             </div>
           </div>
+          @error('description')
+            <p class="mt-0.5 text-sm text-red-500">{{ $message }}</p>
+          @enderror
         </div>
         <button type="submit"
           class="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900">
