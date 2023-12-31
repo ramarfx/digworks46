@@ -7,9 +7,13 @@ import 'magnific-popup';
 import $ from 'jquery';
 
 // Your logic to initialize Magnific Popup
-$(function() {
-  $('.image-link').magnificPopup({
-    type: 'image',
-    
-  });
+$(function () {
+    $('.image-link').magnificPopup({
+        type: 'image',
+        zoom: {
+            enabled: true,
+            duration: 300, // Durasi animasi zoom
+            easing: 'ease-in-out', // Jenis animasi
+          },
+    });
 });

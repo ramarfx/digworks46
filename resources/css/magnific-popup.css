@@ -1,0 +1,16 @@
+/* Contoh CSS untuk efek zoom */
+.mfp-figure-holder .mfp-content {
+    transform: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.mfp-figure-holder.mfp-with-zoom .mfp-img {
+    max-width: none;
+    width: auto;
+    margin: 0 auto;
+    transform: scale(1);
+}
+
+.mfp-figure-holder.mfp-with-zoom.mfp-removing .mfp-img {
+    transform: scale(1);
+}
