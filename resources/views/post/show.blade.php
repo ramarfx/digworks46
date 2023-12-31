@@ -5,10 +5,12 @@
         class="mx-auto flex h-full min-h-screen w-full max-w-7xl flex-col gap-5 rounded-lg border bg-white p-6 lg:flex-row">
         <div class="mb-4 w-full basis-80">
           {{-- media --}}
-          <img
-            src="{{ $post->media == 'placeholder' ? asset('assets/img/nomedia.png') : \Illuminate\Support\Facades\Storage::url($post->image) }}"
-            class="h-auto w-full max-w-full rounded-lg"
-            alt="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}">
+          <a href="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}" class="image-link">
+            <img
+              src="{{ $post->media == 'placeholder' ? asset('assets/img/nomedia.png') : \Illuminate\Support\Facades\Storage::url($post->image) }}"
+              class="h-auto w-full max-w-full rounded-lg"
+              alt="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}">
+          </a>
 
           {{-- bookmark --}}
           <div class="mt-2 flex w-full justify-center rounded-md bg-primary py-3">

@@ -2,6 +2,8 @@ import './bootstrap';
 import 'flowbite';
 import './navbar';
 
+import './magnificPopup';
+
 import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
