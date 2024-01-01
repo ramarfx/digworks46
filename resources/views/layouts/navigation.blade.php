@@ -16,7 +16,7 @@
           </li>
           <li>
             <x-nav-link :href="route('post.index')" :active="request()->routeIs('post.index')">
-              {{ __('Posts') }}
+              {{ __('Karya') }}
             </x-nav-link>
           </li>
         </ul>
@@ -49,7 +49,7 @@
               </x-dropdown-link>
             </li>
             <li>
-              <x-dropdown-link >
+              <x-dropdown-link :href="route('mypost')" :active="request()->routeIs('mypost')">
                 {{ __('Your posts') }}
               </x-dropdown-link>
             </li>

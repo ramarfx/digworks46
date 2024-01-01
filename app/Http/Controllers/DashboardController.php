@@ -12,6 +12,6 @@ class DashboardController extends Controller
     {
         $posts = Post::all()->count();
         $users = User::all()->count();
-        return view('dashboard', compact('posts', 'users'));
+        return view('admin.dashboard', compact('posts', 'users'));
     }
 }

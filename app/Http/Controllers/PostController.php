@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class PostController extends Controller
@@ -21,7 +22,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::with('user')->get();
 
         return view('post.index', compact('posts'));
     }
@@ -71,9 +72,26 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post)
+    public function update(Request $request, Post $post)
     {
-        //
+        $this->validationRules['image'] = 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048';
+        $validated  = $request->validate($this->validationRules);
+
+        // return $this->validationRules['image'];
+
+        if ($request->hasFile('image')) {
+            $file = $request->image;
+            $path = $file->store('public/posts');
+            $validated['image'] = $path;
+
+            Storage::delete($post->image);
+        } else {
+            $validated['image'] = $post->image;
+        }
+
+        $post->update($validated);
+
+        return redirect()->route('mypost');
     }
 
     /**
@@ -81,6 +99,16 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        Storage::delete($post->image);
+        $post->delete();
+
+        return redirect()->route('mypost');
+    }
+
+    public function myPosts(): View
+    {
+        $posts = Post::where('user_id', auth()->user()->id)->get();
+
+        return view('post.user.my-post', compact('posts'));
     }
 }
