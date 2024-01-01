@@ -37,8 +37,8 @@
               @csrf
               @method('delete')
 
-              <button type="submit"
-                class=" font-medium text-red-500 hover:underline dark:text-blue-500">Hapus</button>
+              <button type="button"
+                class="delete placeholder:font-medium text-red-500 hover:underline dark:text-blue-500">Hapus</button>
             </form>
           </td>
         </tr>

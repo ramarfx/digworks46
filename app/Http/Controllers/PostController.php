@@ -91,7 +91,7 @@ class PostController extends Controller
 
         $post->update($validated);
 
-        return redirect()->route('mypost');
+        return redirect()->back();
     }
 
     /**
@@ -102,7 +102,7 @@ class PostController extends Controller
         Storage::delete($post->image);
         $post->delete();
 
-        return redirect()->route('mypost');
+        return redirect()->back();
     }
 
     public function myPosts(): View
