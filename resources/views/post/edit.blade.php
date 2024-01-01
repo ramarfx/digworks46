@@ -46,15 +46,10 @@
               @enderror
             </div>
             <div class="mb-4">
-              <label for="linkCheckbox" class="ms-2 block text-sm font-medium text-gray-900 dark:text-gray-300">
-                <input id="linkCheckbox" type="checkbox"
-                  class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600">
-                Apakah anda ingin mencantumkan link?
-              </label>
-            </div>
-            <div class="mb-4">
-              <input type="url" id="link" name="link"
-                class="hidden w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 lg:w-72"
+                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                for="default_size">Link <span class="text-xs text-gray-500">opsional</span></label>
+              <input type="url" name="link" value="{{ old('link', $post->link) }}"
+                class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 lg:w-72"
                 placeholder="Link">
               @error('link')
                 <p class="mt-0.5 text-sm text-red-500">{{ $message }}</p>
@@ -63,7 +58,7 @@
           </div>
           <div class="lg:w-1/2">
             <img id="preview"
-              class="mb-5 h-[350px] w-auto max-w-full rounded-lg border-4 border-gray-300 bg-gray-200 object-contain"
+              class="mb-5 h-auto md:h-[250px] lg:h-[350px] w-auto max-w-full rounded-lg border-4 border-gray-300 bg-gray-200 object-contain"
             src="{{ Storage::url($post->image) }}">
           </div>
         </div>
@@ -82,7 +77,9 @@
               <label for="editor" class="sr-only">Publish post</label>
               <textarea id="editor" rows="8" name="description"
                 class="block w-full border-0 bg-white px-0 text-sm text-gray-800 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
-                placeholder="Tuliskan sebuah keterangan pada karya mu..."></textarea>
+                placeholder="Tuliskan sebuah keterangan pada karya mu...">
+                {{ old('description', $post->description) }}
+            </textarea>
             </div>
           </div>
           @error('description')

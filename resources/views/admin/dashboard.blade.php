@@ -19,4 +19,6 @@
         <p class="text-5xl font-bold text-white">{{ $posts }}</p>
       </div>
     </div>
+
+    
 </x-dashboard-layout>

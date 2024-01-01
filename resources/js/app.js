@@ -1,6 +1,8 @@
 import './bootstrap';
+
 import 'flowbite';
 import './navbar';
+import './sweetAlert';
 import './magnificPopup';
 import './datatable';
 

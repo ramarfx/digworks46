@@ -89,7 +89,7 @@
                   <form action="{{ route('post.destroy', $post) }}" method="post">
                     @csrf
                     @method('delete')
-                    <button type="submit" onclick="return confirm('Anda yakin ingin menghapus postingan ini?')">
+                    <button type="submit">
                       <i class="fa-solid fa-trash cursor-pointer text-sm hover:text-red-500"></i>
                     </button>
                   </form>
