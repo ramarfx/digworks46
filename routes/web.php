@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\MyPostController;
@@ -21,8 +22,6 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/dashboard', [DashboardController::class, 'index'] )->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -33,3 +32,4 @@ Route::middleware('auth')->group(function () {
 
 
 require __DIR__.'/auth.php';
+require __DIR__.'/App/admin.php';

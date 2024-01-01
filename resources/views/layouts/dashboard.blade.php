@@ -20,6 +20,9 @@
 
   {{-- icons --}}
   <script src="https://kit.fontawesome.com/2c2ad9e412.js" crossorigin="anonymous"></script>
+
+  {{-- datatable --}}
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
 </head>
 
 <body class="font-sans antialiased">

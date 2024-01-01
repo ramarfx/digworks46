@@ -1,8 +1,8 @@
 import './bootstrap';
 import 'flowbite';
 import './navbar';
-
 import './magnificPopup';
+import './datatable';
 
 import Alpine from 'alpinejs';
 
