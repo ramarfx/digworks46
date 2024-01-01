@@ -1,4 +1,4 @@
-<nav class="border-gray-200 bg-white dark:bg-gray-900">
+<nav class="border-gray-200 bg-white dark:bg-gray-900 fixed top-0 w-full z-50">
   <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
     <div class="flex">
       <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -46,6 +46,11 @@
             <li>
               <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+              </x-dropdown-link>
+            </li>
+            <li>
+              <x-dropdown-link >
+                {{ __('Your posts') }}
               </x-dropdown-link>
             </li>
             <li>

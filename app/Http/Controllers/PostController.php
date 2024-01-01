@@ -19,16 +19,17 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() : View
+    public function index()
     {
         $posts = Post::all();
+
         return view('post.index', compact('posts'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create() : View
+    public function create(): View
     {
         return view('post.create');
     }
@@ -54,7 +55,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post) : view
+    public function show(Post $post): view
     {
         return view('post.show', compact('post'));
     }
@@ -62,7 +63,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post) : View
+    public function edit(Post $post): View
     {
         return view('post.edit', compact('post'));
     }

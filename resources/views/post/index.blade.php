@@ -1,5 +1,5 @@
 <x-app-layout>
-  <div class="pt-10 md:mx-4">
+  <div class="md:mx-4">
     <div class="container">
       <div class="flex w-full flex-wrap items-center justify-between gap-3 py-5">
         <h1 class="text-3xl font-bold">Kumpulan karya</h1>
@@ -55,18 +55,18 @@
         </div>
       </form>
 
-      <div class="py-5  grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-5 lg:grid-cols-5">
+      <div class="grid grid-cols-2 gap-2 py-5 md:grid-cols-3 md:gap-5 lg:grid-cols-5">
         @forelse ($posts as $post)
           <div class="flex flex-col">
             <div class="relative w-full bg-primary">
-              <img src="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}" class="h-[150px] w-full max-w-full object-cover object-center"
-                alt="">
+              <img src="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}"
+                class="h-[150px] w-full max-w-full object-cover object-center" alt="">
               <div class="absolute left-4 top-3">
                 <span class="top-3 rounded-md bg-primary px-2 py-1 text-xs text-white">{{ $post->category }}</span>
               </div>
 
             </div>
-            <div class="rounded bg-white border px-4 pt-4">
+            <div class="rounded border bg-white px-4 pt-4">
               <a href="{{ route('post.show', $post) }}" class="block truncate text-base font-semibold">
                 {{ $post->title }}
               </a>
@@ -75,8 +75,12 @@
               </p>
               <div class="flex items-center justify-between border-t py-3">
                 <div class="flex items-center gap-2">
-                  <div class="h-5 w-5 rounded-full bg-primary"></div>
-                  <p class="text-secondary text-sm">{{ $post->user->name }}</p>
+                  <div
+                    class="relative inline-flex h-6 w-6 items-center justify-center overflow-hidden rounded-full bg-primary dark:bg-gray-600">
+                    <span
+                      class="font-xs text-white dark:text-gray-300">{{ strtoupper(substr($post->user->name, 0, 1)) }}</span>
+                  </div>
+                  <p class="text-secondary text-sm capitalize">{{ $post->user->name }}</p>
                 </div>
                 <div class="flex gap-5">
                   <form action="" method="post">
@@ -91,8 +95,8 @@
             </div>
           </div>
         @empty
-          <div class="col-span-2 md:col-span-3 lg:col-span-5 bg-gray-300 py-10 bg-opacity-50">
-            <p class="text-center text-base md:text-lg lg:text-xl font-bold text-gray-500">No posts</p>
+          <div class="col-span-2 bg-gray-300 bg-opacity-50 py-10 md:col-span-3 lg:col-span-5">
+            <p class="text-center text-base font-bold text-gray-500 md:text-lg lg:text-xl">No posts</p>
           </div>
         @endforelse
       </div>

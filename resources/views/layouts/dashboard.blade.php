@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>{{ config('app.name', 'udang') }}</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,12 +25,16 @@
 <body class="font-sans antialiased">
   <div class="min-h-screen w-full bg-gray-100">
     @include('layouts.navigation')
+
     <!-- Page Content -->
     <main class="pt-20">
-      {{ $slot }}
+      @include('layouts.sidebar')
+
+      <div class="p-4 sm:ml-64">
+        {{ $slot }}
+      </div>
     </main>
   </div>
-  @include('layouts.footer')
 
   <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
