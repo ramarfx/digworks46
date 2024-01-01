@@ -589,11 +589,7 @@ table.dataTable td {
     /* FF3.6+ */
     /* IE10+ */
     /* Opera 11.10+ */
-    background: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.05) 0%,
-        rgba(0, 0, 0, 0.05) 100%
-    );
+    @apply bg-primary;
     /* W3C */
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
@@ -614,7 +610,7 @@ table.dataTable td {
     /* FF3.6+ */
     /* IE10+ */
     /* Opera 11.10+ */
-    background: linear-gradient(to bottom, #c6c3f7 0%, #4f46e5 100%);
+    @apply bg-primary;
     /* W3C */
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:active {
@@ -625,7 +621,7 @@ table.dataTable td {
     /* FF3.6+ */
     /* IE10+ */
     /* Opera 11.10+ */
-    background: linear-gradient(to bottom, #7a73eb 0%, #463de4 100%);
+    @apply bg-primary;
     /* W3C */
     box-shadow: inset 0 0 3px #111;
 }
