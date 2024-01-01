@@ -20,7 +20,7 @@
     <tbody>
       @foreach ($posts as $post)
         <tr class="border dark:border-gray-700 odd:dark:bg-gray-900 even:dark:bg-gray-800">
-          <td scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+          <td scope="row" class="title-col px-6 py-4 font-medium text-gray-900 dark:text-white">
             {{ $post->title }}
           </td>
           <td class="px-6 py-4">
