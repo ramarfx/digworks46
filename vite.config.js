@@ -17,5 +17,8 @@ export default defineConfig({
         rollupOptions:{
             external: ['jquery']
         }
-    }
+    },
+    optimizeDeps: {
+        include: ['jquery'],
+      },
 });
