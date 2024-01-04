@@ -23,6 +23,7 @@ export default {
             },
             colors: {
                 primary: "#4f46e5",
+                dark: '#111827',
             }
         },
     },

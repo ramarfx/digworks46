@@ -33,7 +33,7 @@
 </head>
 
 <body class="font-sans antialiased">
-  <div class="min-h-screen w-full bg-gray-100">
+  <div class="min-h-screen w-full bg-gray-100 dark:bg-dark dark:text-white">
     @include('layouts.navigation')
     <!-- Page Content -->
     <main class="pt-20">
@@ -41,7 +41,9 @@
     </main>
   </div>
   @include('layouts.footer')
-5
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

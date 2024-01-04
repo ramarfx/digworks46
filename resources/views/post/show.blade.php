@@ -2,7 +2,7 @@
   <div class="container">
     <div class="mt-10">
       <div
-        class="mx-auto flex h-full min-h-screen w-full max-w-7xl flex-col gap-5 rounded-lg border bg-white p-6 lg:flex-row">
+        class="mx-auto flex h-full min-h-screen w-full max-w-7xl flex-col gap-5 rounded-lg bg-white dark:bg-gray-800 p-6 lg:flex-row">
         <div class="mb-4 w-full lg:basis-80">
           {{-- media --}}
           <a href="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}" class="image-link">

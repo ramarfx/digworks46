@@ -30,7 +30,7 @@
               </li>
               <li>
                 <button type="button"
-                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Design</button>
+                  class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Design</button>
               </li>
               <li>
                 <button type="button"
@@ -66,14 +66,14 @@
               </div>
 
             </div>
-            <div class="rounded border bg-white px-4 pt-4">
+            <div class="rounded border bg-white px-4 pt-4 dark:border-gray-800 dark:bg-gray-800">
               <a href="{{ route('post.show', $post) }}" class="block truncate text-base font-semibold">
                 {{ $post->title }}
               </a>
               <p class="text-xs font-semibold leading-8 text-primary">
                 {{ $post->created_at->diffForHumans() }}
               </p>
-              <div class="flex items-center justify-between border-t py-3">
+              <div class="flex items-center justify-between border-t dark:border-t-gray-700 py-3">
                 <div class="flex items-center gap-2">
                   <div
                     class="relative inline-flex h-6 w-6 items-center justify-center overflow-hidden rounded-full bg-primary dark:bg-gray-600">
@@ -99,7 +99,8 @@
           </div>
         @empty
           <div class="col-span-2 bg-gray-300 bg-opacity-50 py-10 md:col-span-3 lg:col-span-5">
-            <p class="text-center text-base font-bold text-gray-500 md:text-lg lg:text-xl">Kamu belum memposting karya apapun</p>
+            <p class="text-center text-base font-bold text-gray-500 md:text-lg lg:text-xl">Kamu belum memposting karya
+              apapun</p>
           </div>
         @endforelse
       </div>

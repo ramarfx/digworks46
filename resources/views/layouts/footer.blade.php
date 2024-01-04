@@ -1,4 +1,4 @@
-<footer class="bg-white dark:bg-gray-900">
+<footer class="border-t border-gray-200 bg-white dark:border-t-gray-800 dark:bg-gray-900">
   <div class="mx-auto w-full p-4 py-6 lg:py-8">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+    <hr class="my-6 border-gray-200 dark:border-gray-800 sm:mx-auto lg:my-8" />
     <div class="sm:flex sm:items-center sm:justify-between">
       <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">© 2023 <a href="https://flowbite.com/"
           class="hover:underline">Digworks46</a>. All Rights Reserved.

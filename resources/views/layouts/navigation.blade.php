@@ -1,4 +1,4 @@
-<nav class="border-gray-200 bg-white dark:bg-gray-900 fixed top-0 w-full z-50">
+<nav class="fixed top-0 z-50 w-full border-b border-gray-200 bg-white dark:border-b-gray-800 dark:bg-gray-900">
   <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
     <div class="flex">
       <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -26,7 +26,7 @@
 
     {{-- profile --}}
     <div class="flex items-center space-x-3 rtl:space-x-reverse md:order-2 md:space-x-0">
-        <x-dark-mode-button />
+      <x-dark-mode-button />
       @auth
         <button type="button"
           class="flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 md:me-0"
