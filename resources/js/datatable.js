@@ -1,5 +1,4 @@
 import DataTable from 'datatables.net-dt';
-import 'datatables.net-fixedheader-dt';
 
 let table = new DataTable('#postTable', {
     responsive: true,
@@ -21,3 +20,4 @@ let table = new DataTable('#postTable', {
         }
     ]
 });
+

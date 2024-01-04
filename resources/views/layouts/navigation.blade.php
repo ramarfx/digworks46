@@ -26,6 +26,7 @@
 
     {{-- profile --}}
     <div class="flex items-center space-x-3 rtl:space-x-reverse md:order-2 md:space-x-0">
+        <x-dark-mode-button />
       @auth
         <button type="button"
           class="flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 md:me-0"
@@ -82,11 +83,6 @@
           <li class="group">
             <a href="{{ route('login') }}"
               class="flex rounded-md bg-primary px-3 py-2 text-sm text-white md:px-6 md:text-base">Login</a>
-          </li>
-          <li class="group hidden md:block">
-            <a href="{{ route('register') }}">
-              <button
-                class="rounded-md border border-primary bg-transparent px-6 py-2 text-sm text-primary md:text-base">Register</a>
           </li>
         </ul>
       @endauth

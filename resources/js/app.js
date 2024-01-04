@@ -1,10 +1,12 @@
 import './bootstrap';
 
 import 'flowbite';
+
 import './navbar';
 import './sweetAlert';
 import './magnificPopup';
 import './datatable';
+import './darkmode';
 
 import Alpine from 'alpinejs';
 

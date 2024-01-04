@@ -5,7 +5,7 @@
         <div class="flex flex-wrap-reverse items-center lg:px-10">
           <div class="flex w-full flex-col items-center justify-center text-center">
             <h2 class="mb-6 text-center text-3xl font-bold md:text-start lg:text-5xl">Selamat Datang di Digworks46
-              <span class="text-primary font-bold">SMKN 46 Jakarta</span>
+              <span class="font-bold text-primary">SMKN 46 Jakarta</span>
             </h2>
             <p class="text-secondary w-full text-sm leading-relaxed md:text-xl lg:w-1/2">
               Digworks46 merupakan platform yang dimana seluruh siswa dapat mempublikasikan karya buatan mereka mulai
