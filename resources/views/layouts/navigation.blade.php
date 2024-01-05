@@ -44,11 +44,13 @@
             <span class="block truncate text-sm text-gray-500 dark:text-gray-400">{{ Auth::user()->email }}</span>
           </div>
           <ul class="py-2" aria-labelledby="user-menu-button">
-            <li>
-              <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-              </x-dropdown-link>
-            </li>
+            @if (Auth::user()->isAdmin)
+              <li>
+                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                  {{ __('Dashboard') }}
+                </x-dropdown-link>
+              </li>
+            @endif
             <li>
               <x-dropdown-link :href="route('mypost')" :active="request()->routeIs('mypost')">
                 {{ __('Your posts') }}

@@ -21,12 +21,12 @@
         @endphp
 
         @forelse ($posts as $post)
-          <ul class="flex w-full lg:w-2/3 overflow-x-auto justify-between gap-5 border-b dark:border-b-slate-700 pt-3">
-            <li class="text-base font-bold hover:text-primary md:text-lg lg:text-xl"><a
+          <ul class="flex w-full justify-between gap-5 overflow-x-auto border-b pt-3 dark:border-b-slate-700">
+            <li class="w-1/2 text-xs font-medium hover:text-primary md:w-full md:text-lg"><a
                 href="{{ route('post.show', $post) }}">{{ $post->title }}</a></li>
-            <li class="hidden sm:block">{{ $post->category }}</li>
-            <li>{{ $post->created_at->diffForHumans() }}</li>
-            <li class="text-xs text-primary hidden sm:block">{{ $post->user->name }}</li>
+            <li class="hidden self-center sm:block">{{ $post->category }}</li>
+            <li class="self-center text-xs">{{ $post->created_at->diffForHumans() }}</li>
+            <li class="hidden self-center text-xs text-primary sm:block">{{ $post->user->name }}</li>
           </ul>
         @empty
           <h1>Tidak ada aktivitas terbaru!</h1>
