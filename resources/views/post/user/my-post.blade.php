@@ -57,46 +57,7 @@
 
       <div class="grid grid-cols-2 gap-2 py-5 md:grid-cols-3 md:gap-5 lg:grid-cols-5">
         @forelse ($posts as $post)
-          <div class="flex flex-col">
-            <div class="relative w-full bg-primary">
-              <img src="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}"
-                class="h-[150px] w-full max-w-full object-cover object-center" alt="">
-              <div class="absolute left-4 top-3">
-                <span class="top-3 rounded-md bg-primary px-2 py-1 text-xs text-white">{{ $post->category }}</span>
-              </div>
-
-            </div>
-            <div class="rounded border bg-white px-4 pt-4 dark:border-gray-800 dark:bg-gray-800">
-              <a href="{{ route('post.show', $post) }}" class="block truncate text-base font-semibold">
-                {{ $post->title }}
-              </a>
-              <p class="text-xs font-semibold leading-8 text-primary">
-                {{ $post->created_at->diffForHumans() }}
-              </p>
-              <div class="flex items-center justify-between border-t dark:border-t-gray-700 py-3">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="relative inline-flex h-6 w-6 items-center justify-center overflow-hidden rounded-full bg-primary dark:bg-gray-600">
-                    <span
-                      class="font-xs text-white dark:text-gray-300">{{ strtoupper(substr($post->user->name, 0, 1)) }}</span>
-                  </div>
-                  <p class="text-secondary text-sm capitalize">{{ $post->user->name }}</p>
-                </div>
-                <div class="flex gap-5">
-                  <a href="{{ route('post.edit', $post) }}">
-                    <i class="fa-regular fa-pen-to-square cursor-pointer text-sm hover:text-primary"></i>
-                  </a>
-                  <form action="{{ route('post.destroy', $post) }}" method="post">
-                    @csrf
-                    @method('delete')
-                    <button type="button" class="delete">
-                      <i class="fa-solid fa-trash cursor-pointer text-sm hover:text-red-500"></i>
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+            <x-card :data="$post" :control="true"/>
         @empty
           <div class="col-span-2 bg-gray-300 bg-opacity-50 py-10 md:col-span-3 lg:col-span-5">
             <p class="text-center text-base font-bold text-gray-500 md:text-lg lg:text-xl">Kamu belum memposting karya
