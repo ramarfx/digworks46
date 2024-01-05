@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('user')->get();
+        $posts = Post::with('user')->latest()->get();
 
         return view('post.index', compact('posts'));
     }
@@ -91,7 +91,7 @@ class PostController extends Controller
 
         $post->update($validated);
 
-        return redirect()->back();
+        return redirect()->route('mypost');
     }
 
     /**
@@ -107,7 +107,7 @@ class PostController extends Controller
 
     public function myPosts(): View
     {
-        $posts = Post::where('user_id', auth()->user()->id)->get();
+        $posts = Post::where('user_id', auth()->user()->id)->latest()->get();
 
         return view('post.user.my-post', compact('posts'));
     }

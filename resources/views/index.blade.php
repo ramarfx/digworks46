@@ -12,7 +12,7 @@
               dari
               desain poster, lukisan, videografi, website, hingga aplikasi mobile.
             </p>
-            <a href="#posts" class="group mt-4 inline-block bg-primary px-5 py-2 text-base text-white">Lihat<i
+            <a href="{{ route('post.index') }}" class="group mt-4 inline-block bg-primary px-5 py-2 text-base text-white">Lihat<i
                 class="fa-solid fa-arrow-right-long ml-10"></i></a>
           </div>
         </div>

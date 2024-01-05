@@ -11,8 +11,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $posts = Post::all()->count();
-        $users = User::all()->count();
-        return view('admin.dashboard', compact('posts', 'users'));
+        $postsCount = Post::count();
+        $usersCount = User::count();
+
+        $posts = Post::with('user')->where('created_at', '>=', now()->today())->latest()->take(5)->get();
+        return view('admin.dashboard', compact('postsCount', 'usersCount', 'posts'));
     }
 }

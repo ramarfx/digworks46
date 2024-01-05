@@ -64,32 +64,23 @@
               <div class="absolute left-4 top-3">
                 <span class="top-3 rounded-md bg-primary px-2 py-1 text-xs text-white">{{ $post->category }}</span>
               </div>
-
             </div>
-            <div class="rounded border dark:border-gray-800 bg-white dark:bg-gray-800 px-4 pt-4">
-              <a href="{{ route('post.show', $post) }}" class="block truncate text-base font-semibold">
+
+            <div class="rounded border dark:border-gray-800 bg-white dark:bg-gray-800 px-2 pt-2 md:px-4 md:pt-4">
+              <a href="{{ route('post.show', $post) }}" class="block truncate text-sm md:text-base font-semibold">
                 {{ $post->title }}
               </a>
-              <p class="text-xs font-semibold leading-8 text-primary">
+              <p class="text-xs leading-8 text-primary">
                 {{ $post->created_at->diffForHumans() }}
               </p>
               <div class="flex items-center justify-between border-t dark:border-gray-700 py-3">
                 <div class="flex items-center gap-2">
                   <div
-                    class="relative inline-flex h-6 w-6 items-center justify-center overflow-hidden rounded-full bg-primary dark:bg-gray-600">
+                    class="relative inline-flex h-6 w-6 items-center justify-center overflow-hidden rounded-full bg-primary">
                     <span
                       class="font-xs text-white dark:text-gray-300">{{ strtoupper(substr($post->user->name, 0, 1)) }}</span>
                   </div>
                   <p class="text-secondary text-sm capitalize">{{ $post->user->name }}</p>
-                </div>
-                <div class="flex gap-5">
-                  <form action="" method="post">
-                    @csrf
-                    <input type="hidden" name="post_id" value="">
-                    <button type="submit">
-                      <i class="fa-regular fa-bookmark scale-150 text-primary"></i>
-                    </button>
-                  </form>
                 </div>
               </div>
             </div>

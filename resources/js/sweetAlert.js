@@ -6,7 +6,7 @@ deleteBtn.forEach(btn => {
     btn.addEventListener('click', function () {
         return Swal.fire({
             title: 'Apakah kamu yakin ingin menghapus?',
-            text: "Karya ini akan di hapus secara permanen!",
+            text: "ini akan di hapus secara permanen!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
