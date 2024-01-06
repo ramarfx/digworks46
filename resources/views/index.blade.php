@@ -10,7 +10,7 @@
             <p class="text-secondary w-full text-sm leading-relaxed md:text-xl lg:w-1/2">
               Digworks46 merupakan platform yang dimana seluruh siswa dapat mempublikasikan karya buatan mereka mulai
               dari
-              desain poster, lukisan, videografi, website, hingga aplikasi mobile.
+              desain poster, figma, lukisan, videografi, website, hingga aplikasi mobile.
             </p>
             <a href="{{ route('post.index') }}"
               class="group mt-4 inline-block bg-primary px-5 py-2 text-base text-white">Lihat<i
