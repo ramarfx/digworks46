@@ -1,10 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PostController as AdminPostController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\User\MyPostController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,17 +16,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $posts = Post::with('user')->latest()->take(5)->get();
+    return view('index', compact('posts'));
 })->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('/post', PostController::class);
-    Route::get('/myposts', [PostController::class, 'myPosts'])->name('mypost');
 });
 
 
-require __DIR__.'/auth.php';
-require __DIR__.'/App/admin.php';
+require __DIR__ . '/auth.php';
+require __DIR__ . '/App/admin.php';
+require __DIR__ . '/App/post.php';

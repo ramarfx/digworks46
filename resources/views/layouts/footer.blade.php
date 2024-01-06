@@ -2,11 +2,33 @@
   <div class="mx-auto w-full p-4 py-6 lg:py-8">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
-        <a href="https://flowbite.com/" class="flex items-center">
+        <a href="{{ route('home') }}" class="flex items-center">
           <span class="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">Digworks46</span>
         </a>
       </div>
       <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
+        <div>
+          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
+          <ul class="font-medium text-gray-500 dark:text-gray-400">
+            <li class="mb-4">
+              <a href="https://github.com/ramarfx" class="hover:underline">Github</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/ramtxh/" class="hover:underline">Instagram</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
+          <ul class="font-medium text-gray-500 dark:text-gray-400">
+            <li class="mb-4">
+              <a href="https://ramarfx.vercel.app/" class="hover:underline">About Me</a>
+            </li>
+            <li>
+              <a href="https://github.com/ramarfx/digworks46" class="hover:underline">Source Code</a>
+            </li>
+          </ul>
+        </div>
         <div>
           <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Resources</h2>
           <ul class="font-medium text-gray-500 dark:text-gray-400">
@@ -15,28 +37,6 @@
             </li>
             <li>
               <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
-          <ul class="font-medium text-gray-500 dark:text-gray-400">
-            <li class="mb-4">
-              <a href="https://github.com/themesberg/flowbite" class="hover:underline">Github</a>
-            </li>
-            <li>
-              <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
-          <ul class="font-medium text-gray-500 dark:text-gray-400">
-            <li class="mb-4">
-              <a href="#" class="hover:underline">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#" class="hover:underline">Terms &amp; Conditions</a>
             </li>
           </ul>
         </div>

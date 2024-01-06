@@ -6,9 +6,7 @@
 
         <a href="{{ route('post.create') }}" class="rounded bg-primary px-5 py-3 text-white">tambah karya</a>
       </div>
-
-      <x-searchbar />
-
+      
       <div class="grid grid-cols-2 gap-2 py-5 md:grid-cols-3 md:gap-5 lg:grid-cols-5">
         @forelse ($posts as $post)
           <x-card :data="$post" />

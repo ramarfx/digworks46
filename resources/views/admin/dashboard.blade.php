@@ -25,7 +25,7 @@
             <li class="w-1/2 text-xs font-medium hover:text-primary md:w-full md:text-lg"><a
                 href="{{ route('post.show', $post) }}">{{ $post->title }}</a></li>
             <li class="hidden self-center sm:block">{{ $post->category }}</li>
-            <li class="self-center text-xs">{{ $post->created_at->diffForHumans() }}</li>
+            <li class="self-center text-xs text-nowrap">{{ $post->created_at->diffForHumans() }}</li>
             <li class="hidden self-center text-xs text-primary sm:block">{{ $post->user->name }}</li>
           </ul>
         @empty
