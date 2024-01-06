@@ -6,12 +6,12 @@
 
         <a href="{{ route('post.create') }}" class="rounded bg-primary px-5 py-3 text-white">tambah karya</a>
       </div>
-      
+
       <div class="grid grid-cols-2 gap-2 py-5 md:grid-cols-3 md:gap-5 lg:grid-cols-5">
         @forelse ($posts as $post)
           <x-card :data="$post" />
         @empty
-          <div class="col-span-2 bg-gray-300 bg-opacity-50 py-10 md:col-span-3 lg:col-span-5">
+          <div class="col-span-2 bg-gray-300 dark:bg-gray-800 bg-opacity-50 py-10 md:col-span-3 lg:col-span-5">
             <p class="text-center text-base font-bold text-gray-500 md:text-lg lg:text-xl">No posts</p>
           </div>
         @endforelse

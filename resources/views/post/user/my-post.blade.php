@@ -11,7 +11,7 @@
         @forelse ($posts as $post)
             <x-card :data="$post" :control="true"/>
         @empty
-          <div class="col-span-2 bg-gray-300 bg-opacity-50 py-10 md:col-span-3 lg:col-span-5">
+          <div class="col-span-2 bg-gray-300 dark:bg-gray-800 bg-opacity-50 py-10 md:col-span-3 lg:col-span-5">
             <p class="text-center text-base font-bold text-gray-500 md:text-lg lg:text-xl">Kamu belum memposting karya
               apapun</p>
           </div>
