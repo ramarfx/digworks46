@@ -12,14 +12,11 @@
       </p>
       <p class="text-3xl font-bold text-white md:text-5xl">{{ $usersCount }}</p>
     </div>
+
+
     <div class="col-span-2 rounded bg-white p-5 dark:bg-gray-800">
       <h1 class="mb-5 text-base font-bold dark:text-white md:text-lg lg:text-xl">Aktivitas terbaru</h1>
-
       <div class="w-full dark:text-white">
-        @php
-          $id = 1;
-        @endphp
-
         @forelse ($posts as $post)
           <ul class="flex w-full justify-between gap-5 overflow-x-auto border-b pt-3 dark:border-b-slate-700">
             <li class="w-1/2 text-xs font-medium hover:text-primary md:w-full md:text-lg"><a
@@ -32,6 +29,20 @@
           <h1>Tidak ada aktivitas terbaru!</h1>
         @endforelse
       </div>
+    </div>
+
+    <div class="col-span-2 rounded bg-white p-5 dark:bg-gray-800">
+        <h1 class="mb-5 text-base font-bold dark:text-white md:text-lg lg:text-xl">User dengan karya terbanyak</h1>
+        <div class="w-full dark:text-white">
+            @forelse ($users as $user)
+              <ul class="flex w-full justify-between gap-5 overflow-x-auto border-b pt-3 dark:border-b-slate-700">
+                <li class="w-1/2 text-xs font-medium hover:text-primary md:w-full md:text-lg">{{ $user->name }}</li>
+                <li class="hidden self-center sm:block">{{ $user->posts_count }}</li>
+              </ul>
+            @empty
+              <h1>Tidak ada aktivitas terbaru!</h1>
+            @endforelse
+          </div>
     </div>
   </div>
 

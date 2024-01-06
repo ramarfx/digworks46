@@ -50,6 +50,5 @@
 
   <div class="mx-auto w-fit">
     {{ $posts->links() }}
-
   </div>
 </x-dashboard-layout>

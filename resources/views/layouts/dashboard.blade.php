@@ -37,7 +37,7 @@
     @include('layouts.navigation')
 
     <!-- Page Content -->
-    <main class="pt-20">
+    <main class="pt-[72px]">
       @include('layouts.sidebar')
 
       <div class="p-4 sm:ml-64">
