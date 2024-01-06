@@ -2,7 +2,8 @@
   <section class="bg-gray-50 dark:bg-gray-900">
     <div class="mx-auto flex flex-col items-center justify-center px-6 py-8 md:h-screen lg:py-0">
       <a href="{{ route('home') }}" class="mb-6 flex items-center text-2xl font-semibold text-gray-900 dark:text-white">
-        <img class="mr-2 h-8 w-8" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
+        <img loading="lazy" class="mr-2 h-8 w-8" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+          alt="logo">
         Digworks46
       </a>
       <div

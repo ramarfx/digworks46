@@ -28,7 +28,7 @@
               {{ $user->name }}
             </td>
             <td class="px-2 py-2">
-              {{ $karya[$user->id] }}
+              {{ $user->posts_count }}
             </td>
             <td class="px-2 py-2">
               <form action="{{ route('profile.destroy', $user) }}" method="post">

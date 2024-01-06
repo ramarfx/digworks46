@@ -20,11 +20,9 @@ class PostController extends Controller
     {
         $users = User::paginate(15);
 
-        $karya = [];
+        $users = User::withCount('posts')
+            ->paginate(15);
 
-        foreach ($users as $user) {
-            $karya[$user->id] = Post::where('user_id', $user->id)->count();
-        }
-        return view('admin.user.index', compact('users', 'karya'));
+        return view('admin.user.index', compact('users'));
     }
 }

@@ -33,7 +33,7 @@
           id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
           data-dropdown-placement="bottom">
           <span class="sr-only">Open user menu</span>
-          <img class="h-8 w-8 rounded-full" src="{{ asset('image/profile.webp') }}" alt="user photo">
+          <img loading="lazy" class="h-8 w-8 rounded-full" src="{{ asset('image/profile.webp') }}" alt="user photo">
         </button>
         <!-- Dropdown menu -->
         <div

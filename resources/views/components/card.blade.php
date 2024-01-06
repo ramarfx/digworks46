@@ -2,7 +2,7 @@
 
 <div class="flex flex-col">
   <div class="relative w-full bg-primary">
-    <img src="{{ \Illuminate\Support\Facades\Storage::url($data->image) }}"
+    <img loading="lazy" src="{{ \Illuminate\Support\Facades\Storage::url($data->image) }}"
       class="h-[150px] w-full max-w-full object-cover object-center" alt="">
     <div class="absolute left-4 top-3">
       <span class="top-3 rounded-md bg-primary px-2 py-1 text-xs text-white">{{ $data->category }}</span>

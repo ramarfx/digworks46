@@ -58,7 +58,7 @@
             </div>
           </div>
           <div class="lg:w-1/2">
-            <img id="preview"
+            <img loading="lazy" id="preview"
               class="mb-5 hidden h-[350px] w-auto max-w-full rounded-lg border-4 border-gray-300 bg-gray-200 object-contain"
               src="{{ asset('image/mading.png') }}">
           </div>

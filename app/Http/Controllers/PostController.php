@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
@@ -14,7 +13,7 @@ class PostController extends Controller
         'title'       => 'required',
         'description' => 'nullable',
         'category'    => 'required',
-        'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:7000',
         'link'        => 'url|nullable',
     ];
     /**
@@ -74,7 +73,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $this->validationRules['image'] = 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048';
+        $this->validationRules['image'] = 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:7000';
         $validated  = $request->validate($this->validationRules);
 
         // return $this->validationRules['image'];

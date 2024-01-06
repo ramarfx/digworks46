@@ -46,8 +46,8 @@
               @enderror
             </div>
             <div class="mb-4">
-                <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                for="default_size">Link <span class="text-xs text-gray-500">opsional</span></label>
+              <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="default_size">Link <span
+                  class="text-xs text-gray-500">opsional</span></label>
               <input type="url" name="link" value="{{ old('link', $post->link) }}"
                 class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 lg:w-72"
                 placeholder="Link">
@@ -57,9 +57,9 @@
             </div>
           </div>
           <div class="lg:w-1/2">
-            <img id="preview"
-              class="mb-5 h-auto md:h-[250px] lg:h-[350px] w-auto max-w-full rounded-lg border-4 border-gray-300 bg-gray-200 object-contain"
-            src="{{ Storage::url($post->image) }}">
+            <img loading="lazy" id="preview"
+              class="mb-5 h-auto w-auto max-w-full rounded-lg border-4 border-gray-300 bg-gray-200 object-contain md:h-[250px] lg:h-[350px]"
+              src="{{ Storage::url($post->image) }}">
           </div>
         </div>
 

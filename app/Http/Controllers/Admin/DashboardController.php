@@ -20,8 +20,6 @@ class DashboardController extends Controller
             ->take(5)
             ->get();
 
-        // return $users;
-
         return view('admin.dashboard', compact('postsCount', 'usersCount', 'posts', 'users'));
     }
 }

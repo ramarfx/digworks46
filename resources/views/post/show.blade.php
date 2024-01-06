@@ -2,11 +2,11 @@
   <div class="container">
     <div class="mt-10">
       <div
-        class="mx-auto flex h-full min-h-screen w-full max-w-7xl flex-col gap-5 rounded-lg bg-white dark:bg-gray-800 p-6 lg:flex-row">
+        class="mx-auto flex h-full min-h-screen w-full max-w-7xl flex-col gap-5 rounded-lg bg-white p-6 dark:bg-gray-800 lg:flex-row">
         <div class="mb-4 w-full lg:basis-80">
           {{-- media --}}
           <a href="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}" class="image-link">
-            <img
+            <img loading="lazy"
               src="{{ $post->media == 'placeholder' ? asset('assets/img/nomedia.png') : \Illuminate\Support\Facades\Storage::url($post->image) }}"
               class="h-auto w-full max-w-full rounded-lg"
               alt="{{ \Illuminate\Support\Facades\Storage::url($post->image) }}">
