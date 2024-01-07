@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Post;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class PostSeeder extends Seeder
@@ -14,11 +15,15 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
+        $imagePath = public_path('image/banner.gif');
+        $imageName = 'posts/profile_' . time() . '.webp';
+
+        File::copy($imagePath, storage_path('app/public/' . $imageName));
         for ($i = 0; $i < 25; $i++) {
             Post::create([
                 'title'       => fake()->sentence(),
                 'description' => fake()->paragraph(),
-                'image'       => 'posts/zMfCGBjQpflz9Izbnr3blrQuY9U1qRrBzCqhVDD8.jpg',
+                'image'       =>  $imageName,
                 'category'    => fake()->randomElement(['desain', 'website', 'aplikasi']),
                 'user_id'     => 1
             ]);

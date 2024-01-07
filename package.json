@@ -10,8 +10,6 @@
         "alpinejs": "^3.4.2",
         "autoprefixer": "^10.4.2",
         "axios": "^1.6.1",
-        "jquery": "^3.7.1",
-        "datatables.net-dt": "^1.13.8",
         "flowbite": "^2.2.1",
         "laravel-vite-plugin": "^1.0.0",
         "magnific-popup": "^1.1.0",

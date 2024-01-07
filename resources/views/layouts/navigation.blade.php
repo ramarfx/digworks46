@@ -44,7 +44,7 @@
             <span class="block truncate text-sm text-gray-500 dark:text-gray-400">{{ Auth::user()->email }}</span>
           </div>
           <ul class="py-2" aria-labelledby="user-menu-button">
-            @if (Auth::user()->isAdmin)
+            @if (Auth::user()->is_admin)
               <li>
                 <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                   {{ __('Dashboard') }}
